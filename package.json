@@ -1,0 +1,16 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:soryeongk/graphql.git",
+  "author": "soryeongk <soryeongk.kr@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.4.0"
+  }
+}
