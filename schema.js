@@ -21,15 +21,19 @@ const gqlMemberSchema = Graphql.buildSchema(`
   input NewGqlMember {
     name: String!
     part: SoptParts!
+    latestSopt: Int
+    isOnDiet: Boolean
   }
 
   type Query {
+    getAllGqlMembers: [GqlMember]
     getGqlMember(id: ID!): GqlMember
   }
 
   type Mutation {
     addGqlMember(newInput: NewGqlMember): GqlMember
     updateGqlMember(id: ID!, modified: NewGqlMember): GqlMember
+    toggleDietStatus(id: ID!): GqlMember
     deleteX(id: ID!): String
   }
 `);

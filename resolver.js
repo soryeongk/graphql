@@ -12,6 +12,9 @@ const resolver = {
   test: () => {
     return "This is soryeongk";
   },
+  getAllGqlMembers: () => {
+    return Object.values(GqlMembers);
+  },
   getGqlMember: ({ id }) => {
     return GqlMembers[id];
   },
@@ -23,10 +26,17 @@ const resolver = {
   },
   updateGqlMember: ({ id, modified }) => {
     GqlMembers[id] = new GqlMember(id, modified);
+
+    return GqlMembers[id];
+  },
+  toggleDietStatus: ({ id }) => {
+    GqlMembers[id].isOnDiet != GqlMembers[id].isOnDiet;
+
     return GqlMembers[id];
   },
   deleteX: ({ id }) => {
     delete GqlMembers[id];
+
     return `DELETED ${id}`;
   }
 };
